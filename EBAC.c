@@ -109,53 +109,67 @@ int deletar()
     
 }
 
+
 int main()
 {
-    int opcao = 0;
-    int loop = 1;
-
-    for (loop = 1; loop == 1;) {
-        system("cls"); //Limpa o sistema
-        setlocale(LC_ALL, "Portuguese"); 
-        printf("\n### Registros da EBAC ###\n\n");
-        printf("~~ Escolha a opção desejada do menu ~~ \n\n");
-        printf("\n\t1-Registrar Nomes\n");
-        printf("\n\t2-Consultar Nomes\n");
-        printf("\n\t3-Deletar Nomes\n");
-        printf("\n\t4- Sair do menu\n");
-        printf("Opção: ");
-        scanf("%d", &opcao);
-
-        system("cls");
-
-        switch (opcao) { //chamada das funções
-            case 1:
-                registro();
-                system("pause");
-                break;
-
-            case 2:
-                consulta();
-                system("pause");
-                break;
-
-            case 3:
-                deletar();
-                system("pause");
-                break;
+    int opcao = 0; //definindo as variaveis
+    int loop = 1; 
+    char senhadigitada[10] = "a";
+    int comparacao;
+    
+    printf("\n### Registros da EBAC ###\n\n");
+    printf("Login de Administrador Digite sua senha: ");
+    scanf("%s",senhadigitada);
+    
+    comparacao = strcmp(senhadigitada, "admin");
+    
+    if(comparacao == 0)
+    {
+    	system("cls");
+        for (loop = 1; loop == 1;) //Loop Retorno sempre vai ser 1 e começará de novo
+        { 
+            system("cls"); //Limpa o sistema
+            setlocale(LC_ALL, "Portuguese"); //Definindo a linguagem
+            printf("\n### Registros da EBAC ###\n\n");
+            printf("~~ Escolha a opção desejada do menu ~~ \n\n");
+            printf("\n\t1-Registrar Nomes\n");
+            printf("\n\t2-Consultar Nomes\n");
+            printf("\n\t3-Deletar Nomes\n");
+            printf("\n\t4- Sair do menu\n");
+            printf("Opção: ");
+            scanf("%d", &opcao);
+            
+            system("cls");
+            
+            switch (opcao) { //chamada das funções
+                case 1:
+                    registro();
+                    system("pause");
+                    break;
                 
-            case 4:
-            	printf("Obrigado pela preferência e volte sempre!\n");
-            	system("pause");
-            	return 0;
-            	break;
-
-            default:
-                printf("\nErro!: Essa opção não existe!\n");
-                system("pause");
-                break;
+                case 2:
+                    consulta();
+                    system("pause");
+                    break;
+                
+                case 3:
+                    deletar();
+                    system("pause");
+                    break;
+                    
+                case 4:
+                    printf("Obrigado pela preferência e volte sempre!\n");
+                    system("pause");
+                    return 0;
+                    break;
+                
+                default:
+                    printf("\nErro!: Essa opção não existe!\n");
+                    system("pause");
+                    break;
+                    
+            }
         }
     }
-
+    return 16;
 }
-
