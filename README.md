@@ -1,2 +1,1 @@
-# cartorioebac
-Projeto Curso de TI - EBAC
+O projeto tem o objetivo de registrar nomes, sobrenomes e cargos, armazenando essas informações em arquivos dentro de uma pasta chamada 'Registros'. No sistema, você pode adicionar, pesquisar e deletar esses registros conforme necessário. Um sistema como este é essencial para uma empresa, porém, neste projeto em linguagem C, está apenas uma base inicial do que pode ser feito.
